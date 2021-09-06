@@ -1,7 +1,16 @@
+#!/usr/bin/env python 
+# -*- coding:utf-8 -*-
+"""
+@Time:2021/8/23 9:25 下午"
+@Author:lydia_liu"
+@File:weather_test.py
+@function:
+"""
 import allure
 
 from unittest import TestCase
-from library.httpclient import HttpClient
+
+from ilnterface_python.library.httpclient import HttpClient
 
 
 @allure.feature('Test Weather api')
