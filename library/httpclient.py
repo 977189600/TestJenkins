@@ -1,6 +1,14 @@
+#!/usr/bin/env python 
+# -*- coding:utf-8 -*-
+"""
+@Time:2021/8/23 10:11 下午"
+@Author:lydia_liu"
+@File:httpclient.py
+@function:
+"""
 import requests
 import urllib3
-
+import warnings
 
 class HttpClient:
     """Generic Http Client class"""
@@ -13,6 +21,8 @@ class HttpClient:
         self.timeout = timeout
         if self.disable_ssl_verify:
             urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+        warnings.simplefilter('ignore',ResourceWarning)
+
 
     def Get(self, url, headers=None, data=None, json=None, params=None, *args, **kwargs):
         """Http get method"""
